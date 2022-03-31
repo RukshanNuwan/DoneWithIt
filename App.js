@@ -10,8 +10,6 @@ export default function App() {
           flexDirection: 'row',
           justifyContent: 'center',
           alignItems: 'center',
-          alignContent: 'center',
-          flexWrap: 'wrap'
         }
       }
     >
@@ -19,8 +17,11 @@ export default function App() {
         style={
           {
             backgroundColor: 'dodgerblue',
-            width: 100,
-            height: 300
+            // flexBasis: 100, // can map with or height
+            // flex: 1, // == flexGrow
+            flexShrink: 1,
+            width: 400,
+            height: 100
           }
         }
       />
@@ -30,7 +31,7 @@ export default function App() {
           {
             backgroundColor: 'gold',
             width: 100,
-            height: 200
+            height: 100
           }
         }
       />
@@ -39,26 +40,6 @@ export default function App() {
         style={
           {
             backgroundColor: 'tomato',
-            width: 100,
-            height: 100
-          }
-        }
-      />
-
-      <View
-        style={
-          {
-            backgroundColor: 'gray',
-            width: 100,
-            height: 100
-          }
-        }
-      />
-
-      <View
-        style={
-          {
-            backgroundColor: 'greenyellow',
             width: 100,
             height: 100
           }
