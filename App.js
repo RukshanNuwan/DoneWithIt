@@ -1,9 +1,15 @@
-import {Button, Platform, SafeAreaView, StatusBar, StyleSheet} from 'react-native';
+import {Button, Dimensions, Platform, SafeAreaView, StatusBar, StyleSheet, View} from 'react-native';
 
 export default function App() {
+  console.log(Dimensions.get('screen'));
+
   return (
     <SafeAreaView style={styles.container}>
-      <Button title={'Click me'} onPress={() => console.log('clicked')}/>
+      <View style={{
+        backgroundColor: 'dodgerblue',
+        width: '50%',
+        height: 70
+      }}/>
     </SafeAreaView>
   );
 }
