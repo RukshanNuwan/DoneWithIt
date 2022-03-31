@@ -8,8 +8,10 @@ export default function App() {
           backgroundColor: '#fff',
           flex: 1,
           flexDirection: 'row',
-          justifyContent: 'space-evenly',
-          alignItems: 'flex-start'
+          justifyContent: 'center',
+          alignItems: 'center',
+          alignContent: 'center',
+          flexWrap: 'wrap'
         }
       }
     >
@@ -37,6 +39,26 @@ export default function App() {
         style={
           {
             backgroundColor: 'tomato',
+            width: 100,
+            height: 100
+          }
+        }
+      />
+
+      <View
+        style={
+          {
+            backgroundColor: 'gray',
+            width: 100,
+            height: 100
+          }
+        }
+      />
+
+      <View
+        style={
+          {
+            backgroundColor: 'greenyellow',
             width: 100,
             height: 100
           }
