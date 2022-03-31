@@ -7,7 +7,9 @@ export default function App() {
         {
           backgroundColor: '#fff',
           flex: 1,
-          flexDirection: 'row'
+          flexDirection: 'row',
+          justifyContent: 'space-evenly',
+          alignItems: 'flex-start'
         }
       }
     >
@@ -16,7 +18,7 @@ export default function App() {
           {
             backgroundColor: 'dodgerblue',
             width: 100,
-            height: 100
+            height: 300
           }
         }
       />
@@ -26,7 +28,7 @@ export default function App() {
           {
             backgroundColor: 'gold',
             width: 100,
-            height: 100
+            height: 200
           }
         }
       />
