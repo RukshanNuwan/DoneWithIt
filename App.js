@@ -6,7 +6,8 @@ export default function App() {
       style={
         {
           backgroundColor: '#fff',
-          flex: 1
+          flex: 1,
+          flexDirection: 'row'
         }
       }
     >
@@ -14,7 +15,8 @@ export default function App() {
         style={
           {
             backgroundColor: 'dodgerblue',
-            flex: 2
+            width: 100,
+            height: 100
           }
         }
       />
@@ -23,7 +25,8 @@ export default function App() {
         style={
           {
             backgroundColor: 'gold',
-            flex: 1
+            width: 100,
+            height: 100
           }
         }
       />
@@ -32,7 +35,8 @@ export default function App() {
         style={
           {
             backgroundColor: 'tomato',
-            flex: 1
+            width: 100,
+            height: 100
           }
         }
       />
