@@ -1,5 +1,5 @@
 import {View} from 'react-native';
-import {MaterialCommunityIcons} from '@expo/vector-icons';
+import AppText from "./app/components/AppText";
 
 const App = () => {
   return (
@@ -12,7 +12,7 @@ const App = () => {
         }
       }
     >
-      <MaterialCommunityIcons name='email' size={200} color='dodgerblue'/>
+      <AppText>Sample Text</AppText>
     </View>
   );
 };
