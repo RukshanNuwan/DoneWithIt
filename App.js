@@ -1,4 +1,5 @@
 import {View} from 'react-native';
+
 import AppText from "./app/components/AppText";
 
 const App = () => {
