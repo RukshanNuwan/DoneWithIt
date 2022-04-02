@@ -1,4 +1,4 @@
-import {Button, Image, ImageBackground, StyleSheet, Text, View} from "react-native";
+import {Image, ImageBackground, StyleSheet, Text, View} from "react-native";
 
 const WelcomeScreen = () => {
   return (

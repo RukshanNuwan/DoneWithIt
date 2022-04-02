@@ -1,4 +1,6 @@
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
+
+import AppText from "./app/components/AppText";
 
 const App = () => {
   return (
@@ -11,22 +13,7 @@ const App = () => {
         }
       }
     >
-      <Text
-        style={
-          {
-            fontSize: 30,
-            // fontFamily: 'Roboto', // ==> default
-            fontStyle: 'italic',
-            fontWeight: '600',
-            color: 'tomato',
-            textTransform: 'capitalize',
-            textAlign: 'center',
-            lineHeight: 30,
-          }
-        }
-      >
-        sample text. this is a sample react native app. here's some more
-      </Text>
+      <AppText>sample text</AppText>
     </View>
   );
 };
