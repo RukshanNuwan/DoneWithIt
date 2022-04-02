@@ -1,14 +1,17 @@
-import {Button, Image, ImageBackground, StyleSheet, Text, View} from "react-native";
+import {Image, ImageBackground, StyleSheet, Text, View} from "react-native";
+import AppButton from "../components/AppButton";
 
 const WelcomeScreen = () => {
   return (
-    <ImageBackground style={styles.background} source={require('../assets/background.jpg')}>
+    <ImageBackground style={styles.background} source={require('../assets/background.jpg')} blurRadius={7}>
       <View style={styles.logoContainer}>
         <Image source={require('../assets/logo-red.png')} style={styles.logo}/>
-        <Text>Sell What You Don't Need</Text>
+        <Text style={styles.tagline}>Sell What You Don't Need</Text>
       </View>
-      <View style={styles.loginButton}></View>
-      <View style={styles.registerButton}></View>
+      <View style={styles.buttonsContainer}>
+        <AppButton title="Login" onPress={() => console.log('tapped login button')}/>
+        <AppButton title="Register" onPress={() => console.log('tapped register button')} color='secondary'/>
+      </View>
     </ImageBackground>
   );
 };
@@ -28,16 +31,15 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
   },
-  loginButton: {
-    width: '100%',
-    height: 70,
-    backgroundColor: '#fc5c65'
+  tagline: {
+    fontSize: 25,
+    fontWeight: '600',
+    paddingVertical: 20,
   },
-  registerButton: {
+  buttonsContainer: {
     width: '100%',
-    height: 70,
-    backgroundColor: '#4ecdc4'
-  }
+    padding: 20,
+  },
 });
 
 export default WelcomeScreen;
