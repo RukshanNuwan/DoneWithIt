@@ -11,6 +11,7 @@ import Icon from "./app/components/Icon";
 import ListItem from "./app/components/ListItem";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingScreen from "./app/screens/ListingScreen";
+import AppTextInput from "./app/components/AppTextInput";
 
 
 const App = () => {
@@ -18,15 +19,7 @@ const App = () => {
 
   return (
     <Screen>
-      <Text>{firstName}</Text>
-      <TextInput
-        placeholder="First Name"
-        style={{
-          borderBottomColor: '#ccc',
-          borderBottomWidth: 1,
-        }}
-        onChangeText={text => setFirstName(text)}
-      />
+      <AppTextInput placeholder='Username' icon='email'/>
     </Screen>
   );
 };
