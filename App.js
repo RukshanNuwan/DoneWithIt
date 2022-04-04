@@ -12,6 +12,7 @@ import ListItem from "./app/components/ListItem";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingScreen from "./app/screens/ListingScreen";
 import AppTextInput from "./app/components/AppTextInput";
+import AppPicker from "./app/components/AppPicker";
 
 
 const App = () => {
@@ -19,7 +20,8 @@ const App = () => {
 
   return (
     <Screen>
-      <AppTextInput placeholder='Username' icon='email'/>
+      <AppPicker placeholder='Category' icon='apps'/>
+      <AppTextInput placeholder='Email' icon='email'/>
     </Screen>
   );
 };
