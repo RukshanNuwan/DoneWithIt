@@ -22,12 +22,11 @@ const initialMessages = [
 ];
 
 const MessagesScreen = () => {
-  const {messages, setMessages} = useState(initialMessages);
+  const [messages, setMessages] = useState(initialMessages);
 
   const handleDelete = (message) => {
     // Delete the message from messages
-    const newMessages = messages.filter((msg) => msg.id !== message.id);
-    setMessages(newMessages);
+    setMessages(messages.filter((msg) => msg.id !== message.id));
 
     // Call the server
   };
@@ -43,7 +42,7 @@ const MessagesScreen = () => {
             subTitle={item.description}
             image={item.image}
             onPress={() => console.log('message selector', item)}
-            renderRightActions={() => <ListItemDeleteAction onPress={() => console.log('delete icon', item)}/>}
+            renderRightActions={() => <ListItemDeleteAction onPress={handleDelete(item)}/>}
           />
         )}
         ItemSeparatorComponent={ListItemSeparator}
