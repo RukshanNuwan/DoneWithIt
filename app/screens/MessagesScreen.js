@@ -43,7 +43,9 @@ const MessagesScreen = () => {
             subTitle={item.description}
             image={item.image}
             onPress={() => console.log('message selector', item)}
-            renderRightActions={() => <ListItemDeleteAction onPress={() => console.log(item)}/>}
+            renderRightActions={() => (
+              <ListItemDeleteAction onPress={() => handleDelete(item)}/>
+            )}
           />
         )}
         ItemSeparatorComponent={ListItemSeparator}

@@ -14,7 +14,7 @@ import ListingScreen from "./app/screens/ListingScreen";
 
 const App = () => {
   return (
-    <ListingScreen/>
+    <MessagesScreen/>
   );
 };
 
