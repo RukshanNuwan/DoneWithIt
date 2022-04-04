@@ -23,6 +23,7 @@ const initialMessages = [
 
 const MessagesScreen = () => {
   const [messages, setMessages] = useState(initialMessages);
+  const [refreshing, setRefreshing] = useState(false);
 
   const handleDelete = (message) => {
     // Delete the message from messages
@@ -42,10 +43,21 @@ const MessagesScreen = () => {
             subTitle={item.description}
             image={item.image}
             onPress={() => console.log('message selector', item)}
-            renderRightActions={() => <ListItemDeleteAction onPress={handleDelete(item)}/>}
+            renderRightActions={() => <ListItemDeleteAction onPress={() => console.log(item)}/>}
           />
         )}
         ItemSeparatorComponent={ListItemSeparator}
+        refreshing={refreshing}
+        onRefresh={() => {
+          setMessages([
+            {
+              id: 2,
+              title: 't2',
+              description: 'd2',
+              image: require('../assets/mosh.jpg')
+            },
+          ]);
+        }}
       />
     </Screen>
   );
