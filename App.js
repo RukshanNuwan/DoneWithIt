@@ -1,5 +1,6 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Text, TextInput, View} from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
 
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import Card from "./app/components/Card";
@@ -18,8 +19,18 @@ import ListingEditScreen from "./app/screens/ListingEditScreen";
 
 
 const App = () => {
+  const requestPermission = async () => {
+    const {granted} = await ImagePicker.requestMediaLibraryPermissionsAsync();
+
+    if (!granted) alert('You need to enable permission to access the library.');
+  };
+
+  useEffect(() => {
+    requestPermission();
+  }, []);
+
   return (
-    <ListingEditScreen/>
+    <Screen></Screen>
   );
 };
 
