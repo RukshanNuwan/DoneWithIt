@@ -18,7 +18,7 @@ import LoginScreen from "./app/screens/LoginScreen";
 
 const App = () => {
   return (
-    <WelcomeScreen/>
+    <LoginScreen/>
   );
 };
 
