@@ -1,5 +1,4 @@
 import {Image, StyleSheet} from 'react-native';
-import {Formik} from 'formik';
 import * as Yup from 'yup';
 
 import Screen from "../components/Screen";
