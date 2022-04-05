@@ -2,8 +2,8 @@ import {Image, StyleSheet, TouchableHighlight, View} from "react-native";
 import {GestureHandlerRootView, Swipeable} from 'react-native-gesture-handler';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 
-import AppText from "./AppText";
-import colors from "../config/colors";
+import AppText from "../AppText";
+import colors from "../../config/colors";
 
 const ListItem = ({image, title, subTitle, IconComponent, onPress, renderRightActions}) => {
   return (
