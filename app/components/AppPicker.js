@@ -6,7 +6,15 @@ import defaultStyles from '../config/styles';
 import AppText from "./AppText";
 import PickerItem from "./PickerItem";
 
-const AppPicker = ({icon, items, placeholder, onSelectItem, selectedItem, width = '100%'}) => {
+const AppPicker = ({
+                     icon,
+                     items,
+                     placeholder,
+                     onSelectItem,
+                     selectedItem,
+                     width = '100%',
+                     PickerItemComponent = PickerItem
+                   }) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -43,7 +51,7 @@ const AppPicker = ({icon, items, placeholder, onSelectItem, selectedItem, width 
           data={items}
           keyExtractor={item => item.value.toString()}
           renderItem={({item}) => (
-            <PickerItem
+            <PickerItemComponent
               label={item.label}
               onPress={() => {
                 setModalVisible(false);
