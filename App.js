@@ -17,6 +17,7 @@ import AppTextInput from "./app/components/AppTextInput";
 import AppPicker from "./app/components/AppPicker";
 import LoginScreen from "./app/screens/LoginScreen";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
+import ImageInput from "./app/components/ImageInput";
 
 
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
     <Screen>
       <Button title="Select Image" onPress={selectImage}/>
       <Image source={{uri: imageUri}} style={{width: 200, height: 200}}/>
+      <ImageInput imageUri={imageUri}/>
     </Screen>
   );
 };
