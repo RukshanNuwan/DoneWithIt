@@ -2,6 +2,8 @@ import {useEffect, useState} from "react";
 import {Button, Image, Text, TextInput, View} from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
+import {createStackNavigator} from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
 
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import Card from "./app/components/Card";
@@ -20,10 +22,31 @@ import ListingEditScreen from "./app/screens/ListingEditScreen";
 import ImageInput from "./app/components/ImageInput";
 import ImageInputList from "./app/components/ImageInputList";
 
+const Tweets = () => (
+  <Screen>
+    <Text>Tweets</Text>
+  </Screen>
+);
+
+const TweetDetails = () => (
+  <Screen>
+    <Text>Tweet Details</Text>
+  </Screen>
+);
+
+const Stack = createStackNavigator();
+const StackNavigator = () => (
+  <Stack.Navigator>
+    <Stack.Screen name="Tweets" component={Tweets}/>
+    <Stack.Screen name="TweetDetails" component={TweetDetails}/>
+  </Stack.Navigator>
+);
 
 const App = () => {
   return (
-    <ListingEditScreen/>
+    <NavigationContainer>
+      <StackNavigator/>
+    </NavigationContainer>
   );
 };
 
