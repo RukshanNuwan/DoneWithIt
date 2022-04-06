@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
-import {Text, TextInput, View} from 'react-native';
+import {Button, Image, Text, TextInput, View} from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import * as Permissions from 'expo-permissions';
 
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import Card from "./app/components/Card";
@@ -19,6 +20,8 @@ import ListingEditScreen from "./app/screens/ListingEditScreen";
 
 
 const App = () => {
+  const [imageUri, setImageUri] = useState();
+
   const requestPermission = async () => {
     const {granted} = await ImagePicker.requestMediaLibraryPermissionsAsync();
 
@@ -29,8 +32,23 @@ const App = () => {
     requestPermission();
   }, []);
 
+  const selectImage = async () => {
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync();
+
+      if (!result.cancelled) {
+        setImageUri(result.uri);
+      }
+    } catch (err) {
+      console.log('Error reading an image', err);
+    }
+  };
+
   return (
-    <Screen></Screen>
+    <Screen>
+      <Button title="Select Image" onPress={selectImage}/>
+      <Image source={{uri: imageUri}} style={{width: 200, height: 200}}/>
+    </Screen>
   );
 };
 
