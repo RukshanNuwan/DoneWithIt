@@ -24,6 +24,7 @@ import ListingEditScreen from "./app/screens/ListingEditScreen";
 import ImageInput from "./app/components/ImageInput";
 import ImageInputList from "./app/components/ImageInputList";
 import AuthNavigator from "./app/navigation/AuthNavigator";
+import navigationTheme from "./app/navigation/navigationTheme";
 
 const Link = () => {
   const navigation = useNavigation();
@@ -88,7 +89,7 @@ const TabNavigator = () => (
 
 const App = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={navigationTheme}>
       <AuthNavigator/>
     </NavigationContainer>
   );
