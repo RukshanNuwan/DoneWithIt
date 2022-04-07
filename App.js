@@ -5,6 +5,7 @@ import * as Permissions from 'expo-permissions';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
+import {MaterialCommunityIcons} from '@expo/vector-icons';
 
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import Card from "./app/components/Card";
@@ -78,8 +79,21 @@ const Account = () => (
 );
 
 const TabNavigator = () => (
-  <Tab.Navigator>
-    <Tab.Screen name="Feed" component={Tweets}/>
+  <Tab.Navigator
+    tabBarOptions={{
+      activeBackgroundColor: 'tomato',
+      activeTintColor: 'white',
+      inactiveBackgroundColor: '#000',
+      inactiveTintColor: '#fff',
+    }}
+  >
+    <Tab.Screen
+      name="Feed"
+      component={Tweets}
+      options={{
+        tabBarIcon: ({size, color}) => <MaterialCommunityIcons name='home' size={size} color={color}/>
+      }}
+    />
     <Tab.Screen name="Account" component={Account}/>
   </Tab.Navigator>
 );
