@@ -23,6 +23,7 @@ import LoginScreen from "./app/screens/LoginScreen";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
 import ImageInput from "./app/components/ImageInput";
 import ImageInputList from "./app/components/ImageInputList";
+import AuthNavigator from "./app/navigation/AuthNavigator";
 
 const Link = () => {
   const navigation = useNavigation();
@@ -88,7 +89,7 @@ const TabNavigator = () => (
 const App = () => {
   return (
     <NavigationContainer>
-      <TabNavigator/>
+      <AuthNavigator/>
     </NavigationContainer>
   );
 };
