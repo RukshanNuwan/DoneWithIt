@@ -3,7 +3,7 @@ import {Button, Image, Text, TextInput, View} from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
 import {createStackNavigator} from '@react-navigation/stack';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, useNavigation} from '@react-navigation/native';
 
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import Card from "./app/components/Card";
@@ -22,9 +22,18 @@ import ListingEditScreen from "./app/screens/ListingEditScreen";
 import ImageInput from "./app/components/ImageInput";
 import ImageInputList from "./app/components/ImageInputList";
 
-const Tweets = () => (
+const Link = () => {
+  const navigation = useNavigation();
+
+  return (
+    <Button title="Click" onPress={() => navigation.navigate('TweetDetails')}/>
+  );
+};
+
+const Tweets = ({navigation}) => (
   <Screen>
     <Text>Tweets</Text>
+    <Link/>
   </Screen>
 );
 
