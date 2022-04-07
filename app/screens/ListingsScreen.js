@@ -19,14 +19,19 @@ const listings = [
   },
 ];
 
-const ListingScreen = () => {
+const ListingsScreen = ({navigation}) => {
   return (
     <Screen style={styles.screen}>
       <FlatList
         data={listings}
         keyExtractor={listing => listing.id.toString()}
         renderItem={({item}) => (
-          <Card title={item.title} subTitle={`$${item.price}`} image={item.image}/>
+          <Card
+            title={item.title}
+            subTitle={`$${item.price}`}
+            image={item.image}
+            onPress={() => navigation.navigate('ListingDetails', item)}
+          />
         )}
       />
     </Screen>
@@ -40,4 +45,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ListingScreen;
+export default ListingsScreen;
