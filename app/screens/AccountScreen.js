@@ -20,10 +20,11 @@ const menuItems = [
       name: 'email',
       backgroundColor: colors.secondary,
     },
+    targetScreen: 'Messages',
   },
 ];
 
-const AccountScreen = () => {
+const AccountScreen = ({navigation}) => {
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
@@ -36,9 +37,13 @@ const AccountScreen = () => {
           keyExtractor={menuItem => menuItem.title}
           ItemSeparatorComponent={ListItemSeparator}
           renderItem={({item}) => (
-            <ListItem title={item.title} IconComponent={
-              <Icon name={item.icon.name} backgroundColor={item.icon.backgroundColor}/>
-            }/>
+            <ListItem
+              title={item.title}
+              IconComponent={
+                <Icon name={item.icon.name} backgroundColor={item.icon.backgroundColor}/>
+              }
+              onPress={() => navigation.navigate(item.targetScreen)}
+            />
           )}
         />
       </View>
@@ -58,7 +63,8 @@ const styles = StyleSheet.create({
     backgroundColor: colors.light,
   },
   container: {
-    marginVertical: 20,
+    marginTop: 13,
+    marginBottom: 20,
   }
 });
 
