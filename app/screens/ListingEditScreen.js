@@ -80,6 +80,7 @@ const ListingEditScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: 20,
     padding: 10,
   }
 });

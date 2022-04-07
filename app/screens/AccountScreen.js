@@ -63,7 +63,8 @@ const styles = StyleSheet.create({
     backgroundColor: colors.light,
   },
   container: {
-    marginVertical: 20,
+    marginTop: 13,
+    marginBottom: 20,
   }
 });
 
