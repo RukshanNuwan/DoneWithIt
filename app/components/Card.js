@@ -1,11 +1,11 @@
-import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, TouchableWithoutFeedback, View} from 'react-native';
 
 import colors from "../config/colors";
 import AppText from "./AppText";
 
 const Card = ({title, subTitle, image, onPress}) => {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.card}>
         <Image source={image} style={styles.image}/>
 
@@ -14,7 +14,7 @@ const Card = ({title, subTitle, image, onPress}) => {
           <AppText style={styles.subTitle}>{subTitle}</AppText>
         </View>
       </View>
-    </TouchableOpacity>
+    </TouchableWithoutFeedback>
   );
 };
 
