@@ -23,23 +23,23 @@ import ImageInput from "./app/components/ImageInput";
 import ImageInputList from "./app/components/ImageInputList";
 
 const Link = () => {
-  const navigation = useNavigation();
+  const navigation =  useNavigation();
 
   return (
     <Button title="Click" onPress={() => navigation.navigate('TweetDetails')}/>
-  );
-};
+  )
+}
 
 const Tweets = ({navigation}) => (
   <Screen>
     <Text>Tweets</Text>
-    <Link/>
+    <Button title='View Tweets' onPress={() => navigation.navigate('TweetDetails', {id: 1})}/>
   </Screen>
 );
 
-const TweetDetails = () => (
+const TweetDetails = ({route}) => (
   <Screen>
-    <Text>Tweet Details</Text>
+    <Text>Tweet Details {route.params.id}</Text>
   </Screen>
 );
 
