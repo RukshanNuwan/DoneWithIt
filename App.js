@@ -23,17 +23,17 @@ import ImageInput from "./app/components/ImageInput";
 import ImageInputList from "./app/components/ImageInputList";
 
 const Link = () => {
-  const navigation =  useNavigation();
+  const navigation = useNavigation();
 
   return (
     <Button title="Click" onPress={() => navigation.navigate('TweetDetails')}/>
-  )
-}
+  );
+};
 
 const Tweets = ({navigation}) => (
   <Screen>
     <Text>Tweets</Text>
-    <Button title='View Tweets' onPress={() => navigation.navigate('TweetDetails', {id: 1})}/>
+    <Button title="View Tweets" onPress={() => navigation.navigate('TweetDetails', {id: 1})}/>
   </Screen>
 );
 
@@ -45,9 +45,26 @@ const TweetDetails = ({route}) => (
 
 const Stack = createStackNavigator();
 const StackNavigator = () => (
-  <Stack.Navigator>
-    <Stack.Screen name="Tweets" component={Tweets}/>
-    <Stack.Screen name="TweetDetails" component={TweetDetails} options={({route}) => ({title: route.params.id})}/>
+  <Stack.Navigator
+    screenOptions={{
+      headerStyle: {backgroundColor: 'dodgerblue'},
+      headerTintColor: 'white',
+    }}
+  >
+    <Stack.Screen
+      name="Tweets"
+      component={Tweets}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="TweetDetails"
+      component={TweetDetails}
+      options={({route}) => (
+        {title: route.params.id}
+      )}
+    />
   </Stack.Navigator>
 );
 
