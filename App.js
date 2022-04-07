@@ -3,6 +3,7 @@ import {Button, Image, Text, TextInput, View} from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
 import {createStackNavigator} from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
 
 import WelcomeScreen from "./app/screens/WelcomeScreen";
@@ -68,10 +69,25 @@ const StackNavigator = () => (
   </Stack.Navigator>
 );
 
+const Tab = createBottomTabNavigator();
+
+const Account = () => (
+  <Screen>
+    <Text>Account</Text>
+  </Screen>
+);
+
+const TabNavigator = () => (
+  <Tab.Navigator>
+    <Tab.Screen name="Feed" component={Tweets}/>
+    <Tab.Screen name="Account" component={Account}/>
+  </Tab.Navigator>
+);
+
 const App = () => {
   return (
     <NavigationContainer>
-      <StackNavigator/>
+      <TabNavigator/>
     </NavigationContainer>
   );
 };
