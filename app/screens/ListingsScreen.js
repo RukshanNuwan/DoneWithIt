@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {ActivityIndicator, FlatList, StyleSheet} from "react-native";
+import {FlatList, StyleSheet} from "react-native";
 
 import Screen from "../components/Screen";
 import Card from "../components/Card";
@@ -8,6 +8,7 @@ import colors from "../config/colors";
 import listingsApi from '../api/listings';
 import AppText from "../components/AppText";
 import AppButton from "../components/AppButton";
+import ActivityIndicator from "../components/ActivityIndicator";
 
 const ListingsScreen = ({navigation}) => {
   const [listings, setListings] = useState();
@@ -38,7 +39,7 @@ const ListingsScreen = ({navigation}) => {
         </>
       )}
 
-      <ActivityIndicator animating={true} size='large' color='#0000ff'/>
+      <ActivityIndicator visible={loading}/>
 
       <FlatList
         data={listings}
