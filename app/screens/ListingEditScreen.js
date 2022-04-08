@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 import * as Yup from 'yup';
 
+import listingsApi from '../api/listings';
 import useLocation from "../hooks/useLocation";
 import {AppForm, AppFormField, AppFormPicker, SubmitButton} from '../components/forms';
 import Screen from "../components/Screen";
@@ -30,6 +31,16 @@ const categories = [
 const ListingEditScreen = () => {
   const location = useLocation();
 
+  const handleSubmit = async (listing) => {
+    const result = await listingsApi.addListing({...listing, location});
+
+    if (!result.ok) {
+      return alert('Could not save the listing.');
+    }
+
+    alert('Success');
+  };
+
   return (
     <Screen style={styles.container}>
       <AppForm
@@ -40,7 +51,7 @@ const ListingEditScreen = () => {
           category: null,
           images: [],
         }}
-        onSubmit={values => console.log(location)}
+        onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
         <FormImagePicker name="images"/>
