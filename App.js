@@ -27,11 +27,18 @@ import ImageInputList from "./app/components/ImageInputList";
 import AuthNavigator from "./app/navigation/AuthNavigator";
 import navigationTheme from "./app/navigation/navigationTheme";
 import AppNavigator from "./app/navigation/AppNavigator";
+import OfflineNotice from "./app/components/OfflineNotice";
 
 const App = () => {
   return (
-    <AppNavigator/>
-  )
+    <>
+      <OfflineNotice/>
+
+      <NavigationContainer theme={navigationTheme}>
+        <AppNavigator/>
+      </NavigationContainer>
+    </>
+  );
 };
 
 export default App;
