@@ -29,21 +29,9 @@ import navigationTheme from "./app/navigation/navigationTheme";
 import AppNavigator from "./app/navigation/AppNavigator";
 
 const App = () => {
-  const demo = async () => {
-    try {
-      await AsyncStorage.setItem('person', JSON.stringify({id: 1}));
-      const value = await AsyncStorage.getItem('person');
-      const person = JSON.parse(value);
-
-      console.log(person);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  demo();
-
-  return null;
+  return (
+    <AppNavigator/>
+  )
 };
 
 export default App;
