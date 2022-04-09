@@ -36,7 +36,7 @@ const ListingEditScreen = () => {
 
   const location = useLocation();
 
-  const handleSubmit = async (listing) => {
+  const handleSubmit = async (listing, {resetForm}) => {
     setProgress(0);
     setUploadVisible(true);
 
@@ -49,6 +49,8 @@ const ListingEditScreen = () => {
       setUploadVisible(false);
       return alert('Could not save the listing.');
     }
+
+    resetForm();
   };
 
   return (
