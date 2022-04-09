@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {Button, Image, Text, TextInput, View} from 'react-native';
+import {AsyncStorage, Button, Image, Text, TextInput, View} from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -29,9 +29,21 @@ import navigationTheme from "./app/navigation/navigationTheme";
 import AppNavigator from "./app/navigation/AppNavigator";
 
 const App = () => {
-  const netInfo = useNetInfo();
+  const demo = async () => {
+    try {
+      await AsyncStorage.setItem('person', JSON.stringify({id: 1}));
+      const value = await AsyncStorage.getItem('person');
+      const person = JSON.parse(value);
 
-  return <Button disable={!netInfo.isInternetReachable}/>;
+      console.log(person);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  demo();
+
+  return null;
 };
 
 export default App;
