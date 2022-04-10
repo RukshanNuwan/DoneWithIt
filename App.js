@@ -8,6 +8,7 @@ import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 import NetInfo, {useNetInfo} from '@react-native-community/netinfo';
 import jwtDecode from "jwt-decode";
+import {AppLoading} from 'expo'
 
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import Card from "./app/components/Card";
@@ -34,6 +35,7 @@ import authStorage from "./app/auth/storage";
 
 const App = () => {
   const [user, setUser] = useState();
+  const [isReady, setIsReady] = useState(false)
 
   const restoreToken = async () => {
     const token = await authStorage.getToken();
@@ -43,9 +45,11 @@ const App = () => {
     setUser(jwtDecode(token));
   };
 
-  useEffect(() => {
-    restoreToken();
-  }, []);
+  if (!isReady) {
+    return (
+      <AppLoading startAsync={restoreToken} onFinish={() => setIsReady(true)}/>
+    )
+  }
 
   return (
     <AuthContext.Provider value={{user, setUser}}>
