@@ -7,6 +7,7 @@ import authApi from '../api/auth';
 import Screen from "../components/Screen";
 import {AppForm, AppFormField, ErrorMessage, SubmitButton} from '../components/forms';
 import AuthContext from "../auth/context";
+import authStorage from "../auth/storage";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label('Email'),
@@ -27,6 +28,7 @@ const LoginScreen = () => {
     const user = jwtDecode(result.data);
 
     authContext.setUser(user);
+    await authStorage.storeToken(result.data);
   };
 
   return (
