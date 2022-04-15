@@ -10,6 +10,19 @@
       "resizeMode": "cover",
       "backgroundColor": "#e63c4b"
     },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./local/assets/notification-icon.png",
+          "color": "#ffffff",
+          "sounds": [
+            "./local/assets/notification-sound.wav",
+            "./local/assets/notification-sound-other.wav"
+          ]
+        }
+      ]
+    ],
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -29,6 +42,15 @@
       "favicon": "./app/assets/favicon.png"
     },
     "description": "A marketplace for selling the stuff you don't need anymore.",
-    "packagerOpts": { "config": "metro.config.js", "sourceExts": [ "js","jsx","svg","ts","tsx"] }
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": [
+        "js",
+        "jsx",
+        "svg",
+        "ts",
+        "tsx"
+      ]
+    }
   }
 }
