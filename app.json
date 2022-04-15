@@ -2,6 +2,7 @@
   "expo": {
     "name": "DoneWithIt",
     "slug": "DoneWithIt",
+    "privacy": "public",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
@@ -32,14 +33,17 @@
     "ios": {
       "supportsTablet": true
     },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./app/assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
-    },
     "web": {
       "favicon": "./app/assets/favicon.png"
+    },
+    "extra": {
+      "bugsnag": {
+        "apiKey": "82ec1cf2d56a9140c9d6eed1acabf59c"
+      }
+    },
+    "android": {
+      "package": "com.rukshannuwan.donewithit",
+      "versionCode": 1
     },
     "description": "A marketplace for selling the stuff you don't need anymore.",
     "packagerOpts": {
