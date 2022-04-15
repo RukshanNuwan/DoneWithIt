@@ -41,6 +41,11 @@
     "web": {
       "favicon": "./app/assets/favicon.png"
     },
+    "extra": {
+      "bugsnag": {
+        "apiKey": "82ec1cf2d56a9140c9d6eed1acabf59c"
+      }
+    },
     "description": "A marketplace for selling the stuff you don't need anymore.",
     "packagerOpts": {
       "config": "metro.config.js",
