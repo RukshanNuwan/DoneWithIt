@@ -9,6 +9,7 @@ import AccountNavigator from "./AccountNavigator";
 import ListingEditScreen from "../screens/ListingEditScreen";
 import NewListingButton from "./NewListingButton";
 import routes from '../navigation/routes';
+import expoPushTokensApi from "../api/expoPushTokens";
 
 const Tab = createBottomTabNavigator();
 
@@ -24,7 +25,7 @@ const AppNavigator = () => {
       if (!permission.granted) return;
 
       const token = (await Notifications.getExpoPushTokenAsync()).data;
-      console.log(token);
+      expoPushTokensApi.register(token);
     } catch (err) {
       console.log('Error getting a push token', err);
     }
